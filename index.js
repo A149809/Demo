@@ -5,6 +5,6 @@ exports.handler = (event , context, callback) => {
     callback(null,
         {
             statuscode: '200',
-            body: 'The TIme in Los Angeles is :' + currentTime.toString();
+            body: 'The Time in Los Angeles is :' + currentTime.toString();
         });
 };
