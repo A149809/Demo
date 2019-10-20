@@ -1,0 +1,15 @@
+version: 0.1
+phases:
+  install:
+    runtime-version:
+      nodejs: 10
+  build:
+    commands:
+      - npm install time
+      - export BUCKET= lambda-deployment-artifacts-9820
+      - aws cloudformation package --tmplate-file template.yml --s3-bucker $BUCKET -- output-template-file outputtemplate.yml
+    artifact:
+      type: zip
+      files:
+        - template.yml
+        - outputtemplate.yml
