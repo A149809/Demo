@@ -8,16 +8,6 @@ Resources:
       Handler: index.handler
       Runtime: nodejs8.10
       CodeUri: ./
-      Policies:
-     - AWSLambdaExecute # Managed Policy
-     - Version: '2012-10-17' # Policy Document
-       Statement:
-         - Effect: Allow
-           Action:
-             - s3:GetObject
-             - s3:GetObjectACL
-             - S3:PutObject
-           Resource: "arn:aws:s3:::my-bucket/*"
       Events:
         MyTimeApi:
           Type: Api
