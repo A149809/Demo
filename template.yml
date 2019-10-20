@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 AWSTemplateFormatVersion: 2010-09-09
 Transform: AWS::Serverless-2016-10-31
 Description: Outputs the Time
@@ -14,3 +15,21 @@ Resources:
           Properties:
             Path: /TimeResource
             Method: GET
+=======
+AWSTemplateFormatVersion: 2010-09-09
+Transform: "AWS::Serverless-2016-10-31"
+Description: Outputs the Time
+Resources: 
+  TimeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs8.10
+      CodeUri: ./
+      Events:
+        MyTimeApi:
+          Type: Api
+          Properties:
+            Path: /TimeResource
+            Method: GET
+>>>>>>> a38e8e7186ec071791410b347205fb936a52fb12
